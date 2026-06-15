@@ -44,11 +44,16 @@ skills/
     │   ├── scripts/             # 取数、汇总、渲染脚本
     │   ├── references/          # 输出格式与详细说明
     │   └── data/                # 示例流水数据
-    └── expense-reimbursement/   # 端到端报销单自动化
+    ├── expense-reimbursement/   # 端到端报销单自动化
+    │   ├── SKILL.md
+    │   ├── config.json          # 技能配置
+    │   ├── scripts/
+    │   └── references/
+    └── geo-content-scorer/      # 评估内容在 AI 搜索引擎中的可被引用度（GEO 评分）
         ├── SKILL.md
-        ├── config.json          # 技能配置
         ├── scripts/
-        └── references/
+        ├── references/
+        └── assets/
 ```
 
 每个技能目录必有一个 `SKILL.md`；其余内容（`scripts/`、`references/`、

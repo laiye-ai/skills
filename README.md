@@ -44,11 +44,16 @@ skills/
     │   ├── scripts/             # Data-fetch, summarize, and render scripts
     │   ├── references/          # Output formats and detailed guidance
     │   └── data/                # Sample transaction data
-    └── expense-reimbursement/   # End-to-end expense reimbursement automation
+    ├── expense-reimbursement/   # End-to-end expense reimbursement automation
+    │   ├── SKILL.md
+    │   ├── config.json          # Skill configuration
+    │   ├── scripts/
+    │   └── references/
+    └── geo-content-scorer/      # Scores content for citability in AI search engines (GEO)
         ├── SKILL.md
-        ├── config.json          # Skill configuration
         ├── scripts/
-        └── references/
+        ├── references/
+        └── assets/
 ```
 
 A skill folder always contains a `SKILL.md`; everything else (`scripts/`,
