@@ -34,16 +34,25 @@
 
 ```
 skills/
-├── README.md            # 英文说明
-├── README_zh.md         # 本文件（中文）
-├── LICENSE              # MIT 协议
-├── CONTRIBUTING.md      # 如何新增或改进技能
-└── skills/              # 技能库 —— 每个技能一个文件夹
-    └── hello-skill/     # 演示技能格式的示例
+├── README.md                    # 英文说明
+├── README_zh.md                 # 本文件（中文）
+├── LICENSE                      # MIT 协议
+├── CONTRIBUTING.md              # 如何新增或改进技能
+└── skills/                      # 技能库 —— 每个技能一个文件夹
+    ├── cashflow-daily-report/   # 拉取银行流水并生成现金流日报
+    │   ├── SKILL.md
+    │   ├── scripts/             # 取数、汇总、渲染脚本
+    │   ├── references/          # 输出格式与详细说明
+    │   └── data/                # 示例流水数据
+    └── expense-reimbursement/   # 端到端报销单自动化
         ├── SKILL.md
-        └── scripts/
-            └── greet.py
+        ├── config.json          # 技能配置
+        ├── scripts/
+        └── references/
 ```
+
+每个技能目录必有一个 `SKILL.md`；其余内容（`scripts/`、`references/`、
+`data/`、`config.json` 等）均为可选，按需加载。
 
 ## 技能格式
 
@@ -54,6 +63,9 @@ skills/
 name: pdf-form-filler
 description: 填写、扁平化并从 PDF 表单中提取数据。当用户需要填充 PDF
   模板、读取表单字段或将数据合并进 PDF 文档时使用。
+metadata:
+  requires:
+    bins: ["python3"]
 ---
 
 # PDF 表单填写
@@ -70,6 +82,7 @@ Agent 应遵循的分步指令……
 | --- | --- | --- |
 | `name` | ✅ | 简短的 kebab-case 标识符，在技能库内唯一。 |
 | `description` | ✅ | 一到两句话，必须清晰说明该技能**做什么**以及**何时使用** —— 这是 Agent 进行匹配的依据。 |
+| `metadata` | 可选 | 结构化提示，如 `requires.bins`（技能依赖的外部可执行程序）或 `related_skills`（与之配合的技能）。 |
 
 正文应聚焦且可操作。把较长的参考资料、schema 或模板放在技能目录下的独立文件中并以链接引用，使它们仅在真正需要时才被加载。
 

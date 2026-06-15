@@ -1,0 +1,20 @@
+{
+  "_comment": "演示用配置。运行前把下面的 ADP api_key / app_id 占位符替换为你自己的 ADP DocFlow 凭证（从 https://adp.laiye.com 控制台获取）；生产环境请改为从安全配置/环境变量读取，不要把真实密钥提交进仓库。",
+  "adp": {
+    "base_url": "https://adp.laiye.com",
+    "api_key": "YOUR_ADP_API_KEY",
+    "app_id": "YOUR_ADP_APP_ID"
+  },
+  "report": {
+    "_comment": "报销人/收款人不写死，取单据上的实际人名（购买方里的个人名，批次内统一）；收款银行写死招商银行；收款账号按位数随机生成。",
+    "费用承担部门": "综合财务部",
+    "收款银行": "招商银行",
+    "收款账号位数": 16
+  },
+  "feishu": {
+    "_comment": "飞书多维表格定位信息。真实 app_token / table_id / view_id 在运行时由 lark-base 技能按名称解析；下面是给 agent 的名称线索。",
+    "base_name": "报销流程场景",
+    "出差申请表": "出差申请",
+    "写回视图": "待主管审批"
+  }
+}

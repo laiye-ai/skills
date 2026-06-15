@@ -34,16 +34,25 @@ This repository collects the skills Laiye uses across its products and research,
 
 ```
 skills/
-├── README.md            # This file (English)
-├── README_zh.md         # Chinese version
-├── LICENSE              # MIT license
-├── CONTRIBUTING.md      # How to add or improve a skill
-└── skills/              # The skill library — one folder per skill
-    └── hello-skill/     # Example skill demonstrating the format
+├── README.md                    # This file (English)
+├── README_zh.md                 # Chinese version
+├── LICENSE                      # MIT license
+├── CONTRIBUTING.md              # How to add or improve a skill
+└── skills/                      # The skill library — one folder per skill
+    ├── cashflow-daily-report/   # Pulls bank transactions and renders a daily cash-flow report
+    │   ├── SKILL.md
+    │   ├── scripts/             # Data-fetch, summarize, and render scripts
+    │   ├── references/          # Output formats and detailed guidance
+    │   └── data/                # Sample transaction data
+    └── expense-reimbursement/   # End-to-end expense reimbursement automation
         ├── SKILL.md
-        └── scripts/
-            └── greet.py
+        ├── config.json          # Skill configuration
+        ├── scripts/
+        └── references/
 ```
+
+A skill folder always contains a `SKILL.md`; everything else (`scripts/`,
+`references/`, `data/`, `config.json`, …) is optional and loaded on demand.
 
 ## Skill Format
 
@@ -55,6 +64,9 @@ name: pdf-form-filler
 description: Fill, flatten, and extract data from PDF forms. Use when the
   user needs to populate a PDF template, read form fields, or merge data
   into a PDF document.
+metadata:
+  requires:
+    bins: ["python3"]
 ---
 
 # PDF Form Filler
@@ -71,6 +83,7 @@ Guidelines:
 | --- | --- | --- |
 | `name` | ✅ | Short, kebab-case identifier, unique within the library. |
 | `description` | ✅ | One or two sentences. Must clearly state **what** the skill does and **when** to use it — this is what the agent matches against. |
+| `metadata` | optional | Structured hints such as `requires.bins` (external binaries the skill needs) or `related_skills` (skills it composes with). |
 
 Keep the body focused and actionable. Put long reference material, schemas, or templates in separate files within the skill folder and link to them, so they load only when actually needed.
 
