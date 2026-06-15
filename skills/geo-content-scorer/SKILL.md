@@ -1,6 +1,9 @@
 ---
 name: laiye-geo-content-scorer
 description: 来也GEO评分工具 — 免费 GEO（生成引擎优化）内容评分工具。当用户提供一篇文章的链接、Markdown 文件、或粘贴一段内容，并希望评估其在 ChatGPT/DeepSeek/豆包/Kimi 等 AI 搜索引擎中被引用的可能性时，使用此 skill。按照来也科技 GEO 评分标准（7 维度 100 分制）逐项打分，给出可分享的诊断报告。当用户说"GEO评分"、"GEO评分工具"、"帮我评分"、"GEO 检测"、"AI 友好度"、"看看这篇文章在 AI 搜索里表现"、"我的内容能被 AI 引用吗"时触发。
+metadata:
+  requires:
+    bins: ["python3"]
 ---
 
 # 来也GEO评分工具
