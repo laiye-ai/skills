@@ -49,11 +49,15 @@ skills/
     │   ├── config.json          # Skill configuration
     │   ├── scripts/
     │   └── references/
-    └── geo-content-scorer/      # Scores content for citability in AI search engines (GEO)
+    ├── geo-content-scorer/      # Scores content for citability in AI search engines (GEO)
+    │   ├── SKILL.md
+    │   ├── scripts/
+    │   ├── references/
+    │   └── assets/
+    └── laiye-worker-diagnostics/ # Reads local Laiye Worker/Hermes Agent logs and renders a diagnostics report
         ├── SKILL.md
         ├── scripts/
-        ├── references/
-        └── assets/
+        └── references/
 ```
 
 A skill folder always contains a `SKILL.md`; everything else (`scripts/`,

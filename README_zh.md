@@ -49,11 +49,15 @@ skills/
     │   ├── config.json          # 技能配置
     │   ├── scripts/
     │   └── references/
-    └── geo-content-scorer/      # 评估内容在 AI 搜索引擎中的可被引用度（GEO 评分）
+    ├── geo-content-scorer/      # 评估内容在 AI 搜索引擎中的可被引用度（GEO 评分）
+    │   ├── SKILL.md
+    │   ├── scripts/
+    │   ├── references/
+    │   └── assets/
+    └── laiye-worker-diagnostics/ # 读取本机 Laiye Worker/Hermes Agent 日志并生成诊断报告
         ├── SKILL.md
         ├── scripts/
-        ├── references/
-        └── assets/
+        └── references/
 ```
 
 每个技能目录必有一个 `SKILL.md`；其余内容（`scripts/`、`references/`、
