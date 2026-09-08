@@ -54,10 +54,16 @@ skills/
     │   ├── scripts/
     │   ├── references/
     │   └── assets/
-    └── laiye-worker-diagnostics/ # 读取本机 Laiye Worker/Hermes Agent 日志并生成诊断报告
+    ├── laiye-worker-diagnostics/ # 读取本机 Laiye Worker/Hermes Agent 日志并生成诊断报告
+    │   ├── SKILL.md
+    │   ├── scripts/
+    │   └── references/
+    └── xero/                     # 完成 Xero 授权并运行受支持的财务工作流
         ├── SKILL.md
-        ├── scripts/
-        └── references/
+        ├── agents/
+        ├── examples/
+        ├── references/
+        └── scripts/
 ```
 
 每个技能目录必有一个 `SKILL.md`；其余内容（`scripts/`、`references/`、
