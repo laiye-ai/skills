@@ -273,7 +273,6 @@ def _attachment_result(
     attachment: AttachmentRequest, status: str
 ) -> dict[str, object]:
     return {
-        "path": str(attachment.path),
         "filename": attachment.filename,
         "mime_type": attachment.mime_type,
         "size": attachment.size,

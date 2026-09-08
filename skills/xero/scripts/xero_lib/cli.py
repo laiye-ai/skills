@@ -231,7 +231,7 @@ def _doctor(deps: CliDependencies) -> dict[str, object]:
             authenticated = False
     try:
         oauth_config = deps.load_oauth_config()
-    except AppError:
+    except (AppError, ImportError):
         oauth_configured = False
         callback_port_available = False
     else:

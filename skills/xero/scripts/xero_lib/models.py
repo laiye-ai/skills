@@ -243,12 +243,12 @@ def _parse_attachments(payload: dict[str, object], base_path: Path) -> tuple[Att
         if not filename or any(character in INVALID_FILENAME_CHARS for character in filename):
             raise AppError("INVALID_FILENAME", "Attachment filename contains unsupported characters.", {"index": index})
         if not attachment_path.exists():
-            raise AppError("ATTACHMENT_NOT_FOUND", "Attachment file was not found.", {"filename": value})
+            raise AppError("ATTACHMENT_NOT_FOUND", "Attachment file was not found.", {"filename": filename})
         if not attachment_path.is_file():
-            raise AppError("ATTACHMENT_NOT_FILE", "Attachment path must be a file.", {"filename": value})
+            raise AppError("ATTACHMENT_NOT_FILE", "Attachment path must be a file.", {"filename": filename})
         size = attachment_path.stat().st_size
         if size > MAX_ATTACHMENT_BYTES:
-            raise AppError("ATTACHMENT_TOO_LARGE", "Attachment exceeds the 10 MiB limit.", {"filename": value})
+            raise AppError("ATTACHMENT_TOO_LARGE", "Attachment exceeds the 10 MiB limit.", {"filename": filename})
         attachments.append(
             AttachmentRequest(
                 path=attachment_path,

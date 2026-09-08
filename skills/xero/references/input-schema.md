@@ -1,16 +1,16 @@
 # Xero bill CLI input contract
 
-Run the bundled entry point from the repository root:
+Resolve the loaded Skill directory from `SKILL.md`; the examples below use `<skill-dir>` for that absolute path:
 
 ```text
-python scripts/xero.py doctor
-python scripts/xero.py auth login [--tenant-id UUID] [--token-store auto|keyring|encrypted-file]
-python scripts/xero.py auth status [--token-store auto|keyring|encrypted-file]
-python scripts/xero.py auth logout [--local-only] [--token-store auto|keyring|encrypted-file]
-python scripts/xero.py create --input PATH [--tenant-id UUID] [--token-store auto|keyring|encrypted-file] [--retry-unknown ATTEMPT_ID]
-python scripts/xero.py create-state status
-python scripts/xero.py create-state clear --attempt-id ATTEMPT_ID --confirmed-inspected
-python scripts/xero.py demo-smoke --input PATH --confirm-demo-company [--approve-live] [--tenant-id UUID] [--token-store auto|keyring|encrypted-file] [--retry-unknown ATTEMPT_ID]
+python <skill-dir>/scripts/xero.py doctor
+python <skill-dir>/scripts/xero.py auth login [--tenant-id UUID] [--token-store auto|keyring|encrypted-file]
+python <skill-dir>/scripts/xero.py auth status [--token-store auto|keyring|encrypted-file]
+python <skill-dir>/scripts/xero.py auth logout [--local-only] [--token-store auto|keyring|encrypted-file]
+python <skill-dir>/scripts/xero.py create --input PATH [--tenant-id UUID] [--token-store auto|keyring|encrypted-file] [--retry-unknown ATTEMPT_ID]
+python <skill-dir>/scripts/xero.py create-state status
+python <skill-dir>/scripts/xero.py create-state clear --attempt-id ATTEMPT_ID --confirmed-inspected
+python <skill-dir>/scripts/xero.py demo-smoke --input PATH --confirm-demo-company [--approve-live] [--tenant-id UUID] [--token-store auto|keyring|encrypted-file] [--retry-unknown ATTEMPT_ID]
 ```
 
 Every command outcome emits exactly one UTF-8 JSON object to stdout. Browser and tenant-selection progress goes to stderr. `--debug` may be placed anywhere in the invocation; it adds a redacted traceback only for unexpected internal errors. Never parse stderr or rely on human-readable message text.
