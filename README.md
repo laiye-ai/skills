@@ -54,10 +54,16 @@ skills/
     │   ├── scripts/
     │   ├── references/
     │   └── assets/
-    └── laiye-worker-diagnostics/ # Reads local Laiye Worker/Hermes Agent logs and renders a diagnostics report
+    ├── laiye-worker-diagnostics/ # Reads local Laiye Worker/Hermes Agent logs and renders a diagnostics report
+    │   ├── SKILL.md
+    │   ├── scripts/
+    │   └── references/
+    └── xero/                     # Authorizes Xero and runs supported accounting workflows
         ├── SKILL.md
-        ├── scripts/
-        └── references/
+        ├── agents/
+        ├── examples/
+        ├── references/
+        └── scripts/
 ```
 
 A skill folder always contains a `SKILL.md`; everything else (`scripts/`,

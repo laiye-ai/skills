@@ -1,0 +1,7 @@
+interface:
+  display_name: "Xero"
+  short_description: "Authorize Xero and run supported accounting workflows."
+  default_prompt: "Use $xero to authorize Xero or create a purchase bill; for bills, provide the supplier, reference, permit number, SKU quantities, attachment paths, and optional dates or tenant ID."
+
+policy:
+  allow_implicit_invocation: true
